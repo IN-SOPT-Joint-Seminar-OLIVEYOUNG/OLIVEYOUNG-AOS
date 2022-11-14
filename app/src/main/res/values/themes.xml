@@ -1,0 +1,84 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.OliveYoung" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <!-- Text Appearance -->
+    <style name="TextAppearance.Display1.Pretendard22_Bold" parent="">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/pretendard_b</item>
+    </style>
+
+    <style name="TextAppearance.Headline1.Pretendard16_Bold" parent="">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/pretendard_b</item>
+    </style>
+
+    <style name="TextAppearance.Subhead1.Pretendard14_Bold" parent="">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/pretendard_b</item>
+    </style>
+
+    <style name="TextAppearance.Subhead2.Pretendard12_Bold" parent="">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/pretendard_b</item>
+    </style>
+
+    <style name="TextAppearance.Subhead3.Pretendard14_SemiBold" parent="">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/pretendard_sb</item>
+    </style>
+
+    <style name="TextAppearance.Body1.Pretendard12_Regular" parent="">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/pretendard_r</item>
+    </style>
+
+    <style name="TextAppearance.Body2.Pretendard10_Bold" parent="">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/pretendard_b</item>
+    </style>
+
+    <style name="TextAppearance.Body3.Pretendard16_Regular" parent="">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/pretendard_r</item>
+    </style>
+
+    <style name="TextAppearance.Body4.Pretendard12_SemiBold" parent="">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/pretendard_sb</item>
+    </style>
+
+    <style name="TextAppearance.Body5.Pretendard12_Medium" parent="">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/pretendard_m</item>
+    </style>
+
+    <style name="TextAppearance.Body6.Pretendard14_Regular" parent="">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/pretendard_r</item>
+    </style>
+
+    <style name="TextAppearance.Caption1.Pretendard10_Regular" parent="">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/pretendard_r</item>
+    </style>
+
+    <style name="TextAppearance.Caption2.Pretendard10_Medium" parent="">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/pretendard_m</item>
+    </style>
+</resources>
