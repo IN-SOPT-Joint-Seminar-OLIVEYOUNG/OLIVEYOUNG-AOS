@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.HomeFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                style="@style/Style.SquareButton"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_cart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:src="@drawable/ic_cart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/layout_buy_tab_bar"
+            app:layout_constraintTop_toBottomOf="@id/layout_toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <ImageView
+                    android:id="@+id/iv_item_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_skincare"
+                    app:layout_constraintDimensionRatio="1.5:1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_400"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="@string/detail_today_delivery"
+                    android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_item_image"
+                    app:layout_constraintStart_toStartOf="@id/iv_item_image" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="24dp"
+                    app:layout_constraintTop_toBottomOf="@id/iv_item_image">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="@dimen/spacingBase" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="@dimen/spacingBase" />
+
+                    <TextView
+                        android:id="@+id/tv_brand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="에스트라"
+                        android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
+                        android:textColor="@color/gray_500"
+                        app:layout_constraintStart_toStartOf="@id/gl_start"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="에스트라" />
+
+                    <ImageView
+                        android:id="@+id/iv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:src="@drawable/ic_detail"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_brand"
+                        app:layout_constraintStart_toEndOf="@id/tv_brand"
+                        app:layout_constraintTop_toTopOf="@id/tv_brand" />
+
+                    <TextView
+                        android:id="@+id/tv_item_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="에스트라  크림 80ml 더블 기획"
+                        android:textAppearance="@style/TextAppearance.Display1.Pretendard22_Medium"
+                        android:textColor="@color/gray_500"
+                        app:layout_constraintEnd_toEndOf="@id/gl_end"
+                        app:layout_constraintStart_toStartOf="@id/gl_start"
+                        app:layout_constraintTop_toBottomOf="@id/tv_brand"
+                        tools:text="에스트라  크림 80ml 더블 기획" />
+
+                    <TextView
+                        android:id="@+id/tv_item_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:textAppearance="@style/TextAppearance.Display1.Pretendard22_Medium"
+                        android:textColor="@color/gray_500"
+                        app:layout_constraintStart_toStartOf="@id/gl_start"
+                        app:layout_constraintTop_toBottomOf="@id/tv_item_name"
+                        app:price="@{30900}"
+
+                        tools:text="30,900" />
+
+                    <TextView
+                        android:id="@+id/tv_item_sale_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacingBase"
+                        android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
+                        android:textColor="@color/gray_150"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_won"
+                        app:layout_constraintStart_toEndOf="@id/tv_won"
+                        app:needsUnit="@{true}"
+                        app:price="@{55800}"
+                        tools:text="55,800원" />
+
+                    <TextView
+                        android:id="@+id/tv_won"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/detail_price_won"
+                        android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
+                        android:textColor="@color/gray_500"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_item_price"
+                        app:layout_constraintStart_toEndOf="@id/tv_item_price" />
+
+                    <View
+                        android:id="@+id/view_sale_price_strikethrough"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_150"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_item_sale_price"
+                        app:layout_constraintEnd_toEndOf="@id/tv_item_sale_price"
+                        app:layout_constraintStart_toStartOf="@id/tv_item_sale_price"
+                        app:layout_constraintTop_toTopOf="@id/tv_item_sale_price" />
+
+                    <TextView
+                        android:id="@+id/tv_item_sale_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/detail_sale_percent_format(30)}"
+                        android:textAppearance="@style/TextAppearance.Display1.Pretendard22_Medium"
+                        android:textColor="@color/red_400"
+                        app:layout_constraintEnd_toEndOf="@id/gl_end"
+                        app:layout_constraintTop_toTopOf="@id/tv_item_price"
+                        tools:text="30%" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_buy_tab_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_border_top_radius_10"
+            android:elevation="15dp"
+            android:paddingVertical="@dimen/spacingBase"
+            android:paddingStart="11dp"
+            android:paddingEnd="23dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- TODO selector_menu_icon_like checked -> selected 버전 파일 추가-->
+            <ImageButton
+                android:id="@+id/btn_like"
+                style="@style/Style.SquareButton"
+                android:src="@drawable/selector_menu_icon_like"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Style.Material.Button.Basic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/green_500"
+                android:paddingVertical="@dimen/spacingBase"
+                android:text="@string/detail_buy_button_text"
+                android:textAppearance="@style/TextAppearance.Subhead1.Pretendard14_Bold"
+                android:textColor="@color/gray_500"
+                app:cornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_like"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
