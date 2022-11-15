@@ -6,4 +6,11 @@
     <string name="menu_like">Like</string>
     <string name="menu_my">My</string>
     <string name="menu_hamburger_menu">Menu</string>
+
+    <!-- Detail -->
+    <string name="detail_today_delivery">오늘드림</string>
+    <string name="detail_buy_button_text">구매하기</string>
+    <string name="detail_price_won">원</string>
+    <string name="detail_price_won_format">%s원</string>
+    <string name="detail_sale_percent_format">%d%%</string>
 </resources>
