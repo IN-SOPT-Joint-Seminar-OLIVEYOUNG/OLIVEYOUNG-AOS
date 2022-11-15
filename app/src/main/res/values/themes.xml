@@ -17,9 +17,9 @@
     </style>
 
     <!-- Text Appearance -->
-    <style name="TextAppearance.Display1.Pretendard22_Bold" parent="">
+    <style name="TextAppearance.Display1.Pretendard22_Medium" parent="">
         <item name="android:textSize">22sp</item>
-        <item name="android:fontFamily">@font/pretendard_b</item>
+        <item name="android:fontFamily">@font/pretendard_m</item>
     </style>
 
     <style name="TextAppearance.Headline1.Pretendard16_Bold" parent="">
