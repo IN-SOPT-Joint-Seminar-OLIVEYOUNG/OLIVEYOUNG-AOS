@@ -9,7 +9,7 @@ enum class HomeMenuType(@DrawableRes val imgRes: Int, @StringRes val strRes: Int
         R.drawable.img_catgory,
         R.string.home_menu_category
     ),
-    SKIN_CARE(R.drawable.img_skincare, R.string.home_menu_skincare),
+    SKIN_CARE(R.drawable.img_product_sample, R.string.home_menu_skincare),
     BODY_CARE(R.drawable.img_bodycare, R.string.home_menu_bodycare),
     HAIR_CARE(R.drawable.img_haircare, R.string.home_menu_haircare),
     MAKEUP(R.drawable.img_makeup, R.string.home_menu_makeup),

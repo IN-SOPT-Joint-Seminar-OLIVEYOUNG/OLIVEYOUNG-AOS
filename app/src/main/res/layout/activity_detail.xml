@@ -61,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/img_skincare"
+                    android:src="@drawable/img_product_sample"
                     app:layout_constraintDimensionRatio="1.5:1"
                     app:layout_constraintTop_toTopOf="parent" />
 
