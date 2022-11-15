@@ -16,5 +16,6 @@ class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_
         binding.btnBack.setOnClickListener {
             finish()
         }
+        binding.viewHashtag.setHashtag(listOf("립밤", "핸드크림", "틴트", "쿠션", "마스크팩"))
     }
 }

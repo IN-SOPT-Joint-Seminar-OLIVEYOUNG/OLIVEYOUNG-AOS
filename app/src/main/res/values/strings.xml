@@ -13,4 +13,10 @@
     <string name="detail_price_won">원</string>
     <string name="detail_price_won_format">%s원</string>
     <string name="detail_sale_percent_format">%d%%</string>
+    <string name="detail_review_count_format">(%s)</string>
+    <string name="detail_product_type">제품 타입</string>
+
+    <string name="detail_tab_menu_product_detail">제품 상세</string>
+    <string name="detail_tab_menu_review">리뷰</string>
+    <string name="detail_tab_menu_QnA">Q&amp;A</string>
 </resources>
