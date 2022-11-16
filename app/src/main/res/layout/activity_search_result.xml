@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/et_searchbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_searchbar"
+                app:srcCompat="@drawable/ic_back" />
+
+            <EditText
+                android:id="@+id/et_searchbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="41dp"
+                android:layout_marginRight="23dp"
+                android:background="@drawable/bg_searchbar"
+                android:paddingVertical="11dp"
+                android:paddingStart="12dp"
+                android:textAppearance="@style/TextAppearance.Body4.Pretendard12_SemiBold"
+                android:textColor="@color/gray_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/et_searchbar"
+                app:layout_constraintEnd_toEndOf="@+id/et_searchbar"
+                app:layout_constraintTop_toTopOf="@+id/et_searchbar"
+                app:srcCompat="@drawable/ic_search" />
+
+            <TextView
+                android:id="@+id/tv_category_title"
+                android:layout_width="49dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:text="카테고리"
+                android:textAppearance="@style/TextAppearance.Subhead3.Pretendard14_SemiBold"
+                android:textColor="@color/gray_500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_searchbar" />
+
+            <!--TODO 카테고리 텍스트 정령-->
+            <TextView
+                android:id="@+id/tv_category_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="토너/로션/올인원     에센스/크림     더모코스케틱>스킨"
+                android:textAppearance="@style/TextAppearance.Body6.Pretendard14_Regular"
+                android:textColor="@color/gray_400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tv_category_title"
+                app:layout_constraintTop_toBottomOf="@+id/et_searchbar" />
+
+            <TextView
+                android:id="@+id/tv_funtion_title"
+                android:layout_width="25dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="기능"
+                android:textAppearance="@style/TextAppearance.Subhead3.Pretendard14_SemiBold"
+                android:textColor="@color/gray_500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_category_title" />
+
+            <!--TODO 카테고리 텍스트 정령-->
+            <TextView
+                android:id="@+id/tv_funtion_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="24dp"
+                android:text="미백  딥클렌징  필링  안티에이징  미백/주름개선"
+                android:textAppearance="@style/TextAppearance.Body6.Pretendard14_Regular"
+                android:textColor="@color/gray_400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_funtion_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_category_detail" />
+
+            <View
+                android:id="@+id/view_divider"
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray_150"
+                app:layout_constraintTop_toBottomOf="@+id/tv_funtion_detail"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/tv_brand_title"
+                android:layout_width="37dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="브랜드"
+                android:textAppearance="@style/TextAppearance.Subhead3.Pretendard14_SemiBold"
+                android:textColor="@color/gray_500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_brand_title"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_cosmetic_brand" />
+
+            <View
+                android:id="@+id/view_divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="104dp"
+                android:background="@color/gray_150"
+                app:layout_constraintTop_toBottomOf="@+id/tv_brand_title"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/tv_product_title"
+                android:layout_width="25dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="17dp"
+                android:text="상품"
+                android:textAppearance="@style/TextAppearance.Subhead3.Pretendard14_SemiBold"
+                android:textColor="@color/gray_500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider2" />
+
+            <ImageView
+                android:id="@+id/ic_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_product_title"
+                app:layout_constraintStart_toEndOf="@+id/tv_product_title"
+                app:layout_constraintTop_toTopOf="@+id/tv_product_title"
+                app:srcCompat="@drawable/ic_checkbox" />
+
+            <TextView
+                android:id="@+id/tv_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="17dp"
+                android:text="오늘드림"
+                android:textAppearance="@style/TextAppearance.Body6.Pretendard14_Regular"
+                android:textColor="@color/gray_500"
+                app:layout_constraintStart_toEndOf="@+id/ic_checkbox"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_filter"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_sort_type"
+                app:layout_constraintEnd_toStartOf="@+id/tv_sort_type"
+                app:layout_constraintTop_toTopOf="@+id/tv_sort_type" />
+
+            <TextView
+                android:id="@+id/tv_sort_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="18dp"
+                android:text="인기순"
+                android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
+                android:textColor="@color/gray_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_divider2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_cosmetic_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="2dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tv_product_title"
+                app:spanCount="2"
+                tools:listitem="@layout/item_cosmetic_product" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
