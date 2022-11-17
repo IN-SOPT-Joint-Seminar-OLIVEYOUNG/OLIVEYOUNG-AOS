@@ -23,6 +23,7 @@
             android:layout_marginLeft="62dp"
             android:layout_marginTop="41dp"
             android:layout_marginRight="23dp"
+            android:hint="상품을 검색해보세요"
             android:background="@drawable/bg_searchbar"
             android:paddingVertical="11dp"
             android:paddingStart="12dp"
@@ -33,6 +34,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="12dp"
@@ -52,6 +54,16 @@
             android:textColor="@color/gray_500"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_searchbar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="전체삭제"
+            android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_recent_search"
@@ -78,14 +90,16 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_popular_search"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="13dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:clipToPadding="false"
             android:nestedScrollingEnabled="false"
             android:overScrollMode="never"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
             app:spanCount="6"
             tools:listitem="@layout/item_popular_search" />
@@ -103,15 +117,17 @@
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recent_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
             android:layout_marginTop="16dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_recent_item"
             tools:itemCount="3"
-            tools:listitem="@layout/item_cosmetic_product" />
+            tools:listitem="@layout/item_recent_product" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
