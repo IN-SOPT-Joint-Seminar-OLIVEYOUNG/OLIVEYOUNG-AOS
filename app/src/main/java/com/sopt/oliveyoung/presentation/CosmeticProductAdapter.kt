@@ -12,7 +12,7 @@ class CosmeticProductAdapter(context: Context) : RecyclerView.Adapter<CosmeticPr
     private var cosmeticproductList: List<CosmeticProductInfo> = emptyList()
     lateinit var cosmeticProductBinding: ItemCosmeticProductBinding
 
-    class RepoViewHolder( // 레포 뷰홀더
+    class RepoViewHolder(
         private val binding: ItemCosmeticProductBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: CosmeticProductInfo) {

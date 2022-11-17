@@ -8,16 +8,16 @@ import com.sopt.oliveyoung.databinding.ItemCosmeticBrandBinding
 import com.sopt.oliveyoung.databinding.ItemCosmeticProductBinding
 import com.sopt.oliveyoung.domain.CosmeticBrandInfo
 
-class CosmeticBrandAdapter(Item: List<CosmeticBrandInfo>, context: Context) : RecyclerView.Adapter<CosmeticBrandAdapter.RepoViewHolder>() {
+class CosmeticBrandAdapter(context: Context) : RecyclerView.Adapter<CosmeticBrandAdapter.RepoViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
     private var cosmeticBrandList: List<CosmeticBrandInfo> = emptyList()
     lateinit var cosmeticBrandBinding: ItemCosmeticBrandBinding
 
-    class RepoViewHolder( // 레포 뷰홀더
+    class RepoViewHolder(
         private val binding: ItemCosmeticBrandBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: CosmeticBrandInfo) {
-            binding.imgCosmeticBrand.load(data.img_brand)
+            binding.imgCosmeticBrand.load(data.imgBrand)
             binding.tvCosmeticBrand.text = data.brandName
         }
     }
@@ -33,9 +33,8 @@ class CosmeticBrandAdapter(Item: List<CosmeticBrandInfo>, context: Context) : Re
 
     override fun getItemCount() = cosmeticBrandList.size
 
-    fun setcosmeticList(repolist: List<CosmeticBrandInfo>) {
-        this.cosmeticBrandList = repolist.toList() // 원본이 바뀌어도 문제가 생기지 않도록 "얇은 복사" 처리
-        // notifyDataSetChanged() // 새로운 데이터셋을 인식시켜 이를 기반으로 다시 리사이클러 뷰를 그리도록 함
+    fun setCosmeticBrandList(repolist: List<CosmeticBrandInfo>) {
+        this.cosmeticBrandList = repolist.toList()
         notifyItemRangeChanged(0, cosmeticBrandList.size)
     }
 }

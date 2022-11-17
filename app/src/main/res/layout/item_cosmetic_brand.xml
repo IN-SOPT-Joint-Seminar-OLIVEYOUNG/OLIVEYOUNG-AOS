@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="6dp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/img_cosmetic_brand"
         android:layout_width="56dp"
         android:layout_height="0dp"
-        android:layout_marginRight="12dp"
         android:scaleType="centerCrop"
         android:src="@drawable/img_skincare"
         app:layout_constraintDimensionRatio="1:1"
@@ -22,7 +22,6 @@
         android:id="@+id/tv_cosmetic_brand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="-2dp"
         android:text="바이오더마"
         android:textAppearance="@style/TextAppearance.Body2.Pretendard10_Bold"
         android:textColor="@color/black"
