@@ -3,168 +3,330 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".presentation.HomeFragment">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab"
-            android:layout_width="0dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="23dp"
-            app:layout_constraintEnd_toEndOf="@id/gl_end"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/iv_oliveyoung"
-            app:tabIndicator="@null"
-            app:tabIndicatorColor="@color/gray_500"
-            app:tabIndicatorHeight="2dp"
-            app:tabSelectedTextColor="@color/gray_500"
-            app:tabTextAppearance="@style/TextAppearance.Subhead1.Pretendard14_Bold"
-            app:tabTextColor="@color/gray_300">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="추천" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="특가" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="랭킹" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이벤트" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="세일" />
-        </com.google.android.material.tabs.TabLayout>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/spacingBase" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/spacingBase" />
-
-        <ImageView
-            android:id="@+id/iv_oliveyoung"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="38dp"
-            android:src="@drawable/img_oliveyoung"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/ic_serch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="41dp"
-            android:layout_marginEnd="79dp"
-            android:src="@drawable/ic_search"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/ic_cart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/ic_cart"
-            app:layout_constraintEnd_toEndOf="@id/gl_end"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/iv_main_banner"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="142dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_product_sample"
-            app:layout_constraintDimensionRatio="1:0.6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            tools:context=".presentation.HomeFragment">
 
-        <TextView
-            android:id="@+id/tv_onlyoliveyoung"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="오직 올리브영에서만"
-            android:textAppearance="@style/TextAppearance.Headline1.Pretendard16_Bold"
-            android:textColor="@color/gray_500"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/rv_home_menu" />
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="23dp"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/iv_oliveyoung"
+                app:tabIndicator="@null"
+                app:tabIndicatorColor="@color/gray_500"
+                app:tabIndicatorHeight="2dp"
+                app:tabSelectedTextColor="@color/gray_500"
+                app:tabTextAppearance="@style/TextAppearance.Subhead1.Pretendard14_Bold"
+                app:tabTextColor="@color/gray_300">
 
-        <TextView
-            android:id="@+id/tv_more"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
-            android:text="더보기 >"
-            app:layout_constraintEnd_toEndOf="@id/gl_end"
-            app:layout_constraintTop_toBottomOf="@id/rv_home_menu" />
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="추천" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_home_menu"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintEnd_toEndOf="@id/gl_end"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/iv_main_banner"
-            app:spanCount="5"
-            tools:listitem="@layout/item_home_menu" />
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="특가" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/img_onlyoliveyoung_banner1"
-            app:layout_constraintDimensionRatio="1:0.23"
-            app:layout_constraintEnd_toEndOf="@id/gl_end"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/tv_onlyoliveyoung" />
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="랭킹" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/img_onlyoliveyoung_banner1"
-            app:layout_constraintDimensionRatio="1:0.23"
-            app:layout_constraintEnd_toEndOf="@id/gl_end"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/tv_onlyoliveyoung" />
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이벤트" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/img_onlyoliveyoung_banner1"
-            app:layout_constraintDimensionRatio="1:0.23"
-            app:layout_constraintEnd_toEndOf="@id/gl_end"
-            app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/tv_onlyoliveyoung" />
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="세일" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/spacingBase" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/spacingBase" />
+
+            <ImageView
+                android:id="@+id/iv_oliveyoung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:src="@drawable/img_oliveyoung"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ic_serch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="41dp"
+                android:layout_marginEnd="79dp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ic_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/ic_cart"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_main_banner"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="142dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_product_sample"
+                app:layout_constraintDimensionRatio="1:0.6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_recommended_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/home_recommend_product_title"
+                android:textAppearance="@style/TextAppearance.Headline1.Pretendard16_Bold"
+                android:textColor="@color/gray_350"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/rv_home_menu" />
+
+            <TextView
+                android:id="@+id/tv_more_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34.5dp"
+                android:text="더보기"
+                android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
+                android:textColor="@color/gray_500"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintTop_toBottomOf="@id/rv_home_menu" />
+
+            <ImageView
+                android:id="@+id/img_beyond_cream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_beyond_cream"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_recommended_product" />
+
+            <TextView
+                android:id="@+id/tv_name_beyond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="비욘드"
+                android:textAppearance="@style/TextAppearance.Body2.Pretendard10_Bold"
+                android:textColor="@color/gray_500"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/img_beyond_cream" />
+
+            <TextView
+                android:id="@+id/tv_name_beyond_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="엔젤 아쿠아 수분 진정 크림 150ml 1+1"
+                android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
+                android:textColor="@color/gray_500"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_name_beyond" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_recommended_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="이 브래드 어떠세요?"
+                android:textAppearance="@style/TextAppearance.Headline1.Pretendard16_Bold"
+                android:textColor="@color/gray_500"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_beyond_product" />
+
+            <TextView
+                android:id="@+id/tv_more_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34.5dp"
+                android:text="더보기 >"
+                android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
+                android:textColor="@color/gray_500"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintTop_toBottomOf="@id/img_beyond_cream" />
+
+            <TextView
+                android:id="@+id/tv_onlyoliveyoung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="오직 올리브영에서만"
+                android:textAppearance="@style/TextAppearance.Headline1.Pretendard16_Bold"
+                android:textColor="@color/gray_500"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_recommended_brand" />
+
+            <TextView
+                android:id="@+id/tv_more_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:text="더보기 >"
+                android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
+                android:textColor="@color/gray_500"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_more_2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/spacingBase"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_main_banner"
+                app:spanCount="5"
+                tools:listitem="@layout/item_home_menu" />
+
+            <ImageView
+                android:id="@+id/img_onlyoliveyoung_banner1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_onlyoliveyoung_banner1"
+                app:layout_constraintDimensionRatio="1:0.231"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_onlyoliveyoung" />
+
+            <ImageView
+                android:id="@+id/img_onlyoliveyoung_banner2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_onlyoliveyoung_banner2"
+                app:layout_constraintDimensionRatio="1:0.237"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/img_onlyoliveyoung_banner1" />
+
+            <ImageView
+                android:id="@+id/img_onlyoliveyoung_banner3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_onlyoliveyoung_banner3"
+                app:layout_constraintDimensionRatio="1:0.228"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/img_onlyoliveyoung_banner2" />
+
+            <TextView
+                android:id="@+id/tv_month_keyword_story"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="이달의 키워드 스토리"
+                android:textAppearance="@style/TextAppearance.Headline1.Pretendard16_Bold"
+                android:textColor="@color/gray_500"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/img_onlyoliveyoung_banner3" />
+
+            <TextView
+                android:id="@+id/tv_more_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:text="더보기 >"
+                android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
+                android:textColor="@color/gray_500"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintTop_toBottomOf="@id/img_onlyoliveyoung_banner3" />
+
+            <ImageView
+                android:id="@+id/img_month_keyword_story_collagen"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/img_month_keyword_story_collagen"
+                app:layout_constraintDimensionRatio="1:0.25"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_month_keyword_story" />
+
+            <ImageView
+                android:id="@+id/img_month_keyword_story_scrub"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/img_month_keyword_story_scrub"
+                app:layout_constraintDimensionRatio="1:0.24"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/img_month_keyword_story_collagen" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_customer_service"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/gray_200"
+                android:paddingHorizontal="56dp"
+                android:paddingVertical="22dp"
+                app:layout_constraintDimensionRatio="1:0.469"
+                app:layout_constraintTop_toBottomOf="@id/img_month_keyword_story_scrub">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </layout>

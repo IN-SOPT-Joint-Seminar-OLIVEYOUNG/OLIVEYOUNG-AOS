@@ -25,4 +25,5 @@
     <string name="detail_price_won">원</string>
     <string name="detail_price_won_format">%s원</string>
     <string name="detail_sale_percent_format">%d%%</string>
+    <string name="home_recommend_product_title"><font color="##2f2f2f">김채령님</font>을 위한 추천상품!</string>
 </resources>
