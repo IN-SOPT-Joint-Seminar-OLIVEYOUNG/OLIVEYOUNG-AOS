@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="product"
             type="com.sopt.oliveyoung.domain.CosmeticProductInfo" />
@@ -13,18 +14,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="8dp"
-        android:paddingVertical="14dp"
-        tools:context=".presentation.MainActivity">
+        android:paddingVertical="14dp">
 
         <ImageView
-            android:id="@+id/img_cosmetic"
-            android:layout_width="0dp"
-            android:layout_height="184dp"
+            android:id="@+id/iv_product_img"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:background="@drawable/shape_border_radius_10"
             android:clipToOutline="true"
             android:scaleType="centerCrop"
             android:src="@drawable/img_skincare"
-            app:layout_constraintDimensionRatio="0.85:1"
+            app:layout_constraintDimensionRatio="0.86:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/img_skincare" />
@@ -37,19 +37,20 @@
             android:text="에스트라"
             android:textAppearance="@style/TextAppearance.Body2.Pretendard10_Bold"
             android:textColor="@color/gray_500"
-            app:layout_constraintStart_toStartOf="@+id/img_cosmetic"
-            app:layout_constraintTop_toBottomOf="@+id/img_cosmetic" />
+            app:layout_constraintStart_toStartOf="@+id/iv_product_img"
+            app:layout_constraintTop_toBottomOf="@+id/iv_product_img" />
 
         <TextView
             android:id="@+id/tv_product_name"
-            android:layout_width="156dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:minLines="2"
             android:text="아토베리어365 크림 80ml 더블 기획"
             android:textAppearance="@style/TextAppearance.Caption1.Pretendard10_Regular"
             android:textColor="@color/gray_500"
-            app:layout_constraintStart_toStartOf="@+id/tv_brand"
+            app:layout_constraintEnd_toEndOf="@id/iv_product_img"
+            app:layout_constraintStart_toStartOf="@+id/iv_product_img"
             app:layout_constraintTop_toBottomOf="@+id/tv_brand" />
 
         <TextView
@@ -73,7 +74,7 @@
             android:text="@{@string/detail_sale_percent_format(product.salePercentage)}"
             android:textAppearance="@style/TextAppearance.Caption2.Pretendard10_Medium"
             android:textColor="@color/red_400"
-            app:layout_constraintEnd_toEndOf="@+id/img_cosmetic"
+            app:layout_constraintEnd_toEndOf="@+id/iv_product_img"
             app:layout_constraintTop_toBottomOf="@+id/tv_brand"
             tools:text="30%" />
 
