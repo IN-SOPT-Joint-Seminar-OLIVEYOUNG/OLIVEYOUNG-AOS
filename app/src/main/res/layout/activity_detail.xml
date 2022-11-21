@@ -254,194 +254,19 @@
                         android:background="@color/gray_150"
                         app:layout_constraintTop_toBottomOf="@id/view_hashtag" />
 
-                    <!-- TODO 레이아웃 분리 -->
-
-                    <TextView
-                        android:id="@+id/tv_general_delivery"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacingBase"
-                        android:text="@string/detail_general_delivery"
-                        android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
-                        android:textColor="@color/gray_500"
-                        app:layout_constraintStart_toStartOf="@id/gl_start"
-                        app:layout_constraintTop_toBottomOf="@id/view_divider_product_type" />
-
-                    <TextView
-                        android:id="@+id/tv_delivery_fee"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="46dp"
-                        android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
-                        android:textColor="@color/gray_500"
-                        app:layout_constraintStart_toEndOf="@id/tv_general_delivery"
-                        app:layout_constraintTop_toTopOf="@id/tv_general_delivery"
-                        app:needsUnit="@{true}"
-                        app:price="@{2500}"
-                        tools:text="2,500원" />
-
-                    <TextView
-                        android:id="@+id/tv_delivery_fee_guide"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:text="@string/detail_delivery_fee_guide"
-                        android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
-                        android:textColor="@color/gray_300"
-                        app:layout_constraintStart_toEndOf="@id/tv_delivery_fee"
-                        app:layout_constraintTop_toTopOf="@id/tv_delivery_fee"
-                        app:needsUnit="@{true}" />
-
-                    <TextView
-                        android:id="@+id/tv_today_delivery"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacingBase"
-                        android:text="@string/detail_today_delivery"
-                        android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
-                        android:textColor="@color/gray_500"
-                        app:layout_constraintStart_toStartOf="@id/gl_start"
-                        app:layout_constraintTop_toBottomOf="@id/tv_general_delivery" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:src="@drawable/ic_info"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_today_delivery"
-                        app:layout_constraintStart_toEndOf="@id/tv_today_delivery"
-                        app:layout_constraintTop_toTopOf="@id/tv_today_delivery" />
-
-                    <TextView
-                        android:id="@+id/tv_today_delivery_fee"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2,500원 / 5,000원"
-                        android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
-                        android:textColor="@color/gray_500"
-                        app:layout_constraintStart_toStartOf="@id/tv_delivery_fee"
-                        app:layout_constraintTop_toTopOf="@id/tv_today_delivery" />
-
-                    <ImageButton
-                        android:id="@+id/iv_dropdown"
-                        style="@style/Style.ImageButton.Basic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:src="@drawable/selector_dropdown_button"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_today_delivery_fee"
-                        app:layout_constraintStart_toEndOf="@id/tv_today_delivery_fee"
-                        app:layout_constraintTop_toTopOf="@id/tv_today_delivery_fee" />
-
-                    <TextView
-                        android:id="@+id/tv_today_delivery_guide"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/detail_today_delivery_guide"
-                        android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
-                        android:textColor="@color/gray_500"
-                        app:layout_constraintStart_toStartOf="@id/tv_delivery_fee"
-                        app:layout_constraintTop_toBottomOf="@id/tv_today_delivery_fee" />
-
-                    <View
-                        android:id="@+id/view_divider_delivery_section"
+                    <include
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="@dimen/spacingBase"
-                        android:background="@color/gray_150"
-                        app:layout_constraintTop_toBottomOf="@id/tv_today_delivery_guide" />
-
-                    <TextView
-                        android:id="@+id/tv_search_store"
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacingBase"
-                        android:text="@string/detail_search_store_available_for_purchase"
-                        android:textAppearance="@style/TextAppearance.Subhead1.Pretendard14_Bold"
-                        android:textColor="@color/green_500"
-                        app:layout_constraintStart_toStartOf="@id/gl_start"
-                        app:layout_constraintTop_toBottomOf="@id/view_divider_delivery_section" />
-
-                    <ImageView
-                        android:id="@+id/iv_search_store"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:src="@drawable/ic_search_small"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_search_store"
-                        app:layout_constraintStart_toEndOf="@id/tv_search_store"
-                        app:layout_constraintTop_toTopOf="@id/tv_search_store" />
-
-                    <View
-                        android:id="@+id/view_divider_search_store"
-                        android:layout_width="0dp"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="4dp"
-                        android:background="@color/green_500"
-                        app:layout_constraintEnd_toEndOf="@id/iv_search_store"
-                        app:layout_constraintStart_toStartOf="@id/tv_search_store"
-                        app:layout_constraintTop_toBottomOf="@id/tv_search_store" />
-
-                    <ImageView
-                        android:id="@+id/iv_star"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_star1"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_location"
-                        app:layout_constraintStart_toStartOf="@id/gl_start"
-                        app:layout_constraintTop_toTopOf="@id/tv_location" />
-
-                    <TextView
-                        android:id="@+id/tv_location"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginTop="@dimen/spacingBase"
-                        android:text="홍대공항철도점"
-                        android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
-                        android:textColor="@color/gray_500"
-                        app:layout_constraintStart_toEndOf="@id/iv_star"
-                        app:layout_constraintTop_toBottomOf="@id/view_divider_search_store" />
-
-                    <TextView
-                        android:id="@+id/tv_open"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="4dp"
-                        android:text="@string/detail_open"
-                        android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
-                        android:textColor="@color/gray_500"
-                        app:layout_constraintEnd_toStartOf="@id/view_divider_vertical_open"
-                        app:layout_constraintTop_toTopOf="@id/tv_location" />
-
-                    <View
-                        android:id="@+id/view_divider_vertical_open"
-                        android:layout_width="1dp"
-                        android:layout_height="12dp"
-                        android:layout_marginEnd="4dp"
-                        android:background="@color/gray_150"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_probability_of_stocking"
-                        app:layout_constraintEnd_toStartOf="@id/tv_probability_of_stocking"
-                        app:layout_constraintTop_toTopOf="@id/tv_probability_of_stocking" />
-
-                    <TextView
-                        android:id="@+id/tv_probability_of_stocking"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/detail_stock"
-                        android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
-                        android:textColor="@color/gray_500"
-                        app:layout_constraintEnd_toEndOf="@id/gl_end"
-                        app:layout_constraintTop_toTopOf="@id/tv_location" />
+                        android:id="@+id/layout_detail_deliverey_section"
+                        layout="@layout/layout_detail_deliverey_section"
+                        app:layout_constraintTop_toBottomOf="@id/view_divider_product_type" />
 
                     <View
                         android:id="@+id/view_divider_content"
                         android:layout_width="match_parent"
                         android:layout_height="8dp"
-                        android:layout_marginTop="@dimen/spacingBase"
                         android:background="@color/gray_150"
-                        app:layout_constraintTop_toBottomOf="@id/tv_location" />
+                        app:layout_constraintTop_toBottomOf="@id/layout_detail_deliverey_section" />
 
                     <View
                         android:id="@+id/view_divider_tab"
