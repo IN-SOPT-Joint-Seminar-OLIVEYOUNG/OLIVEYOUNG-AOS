@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.HomeFragment">
+        tools:context=".presentation.DetailActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_toolbar"
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:clipToPadding="false"
-            android:paddingBottom="20dp"
+            android:paddingBottom="2dp"
             app:layout_constraintBottom_toTopOf="@id/layout_buy_tab_bar"
             app:layout_constraintTop_toBottomOf="@id/layout_toolbar">
 
@@ -255,10 +255,10 @@
                         app:layout_constraintTop_toBottomOf="@id/view_hashtag" />
 
                     <include
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:id="@+id/layout_detail_deliverey_section"
                         layout="@layout/layout_detail_deliverey_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         app:layout_constraintTop_toBottomOf="@id/view_divider_product_type" />
 
                     <View
@@ -342,10 +342,13 @@
                         android:id="@+id/rv_recommend_product_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacingBase"
-                        android:orientation="horizontal"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintTop_toBottomOf="@id/tv_recommend_product" />
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="2dp"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/tv_recommend_product"
+                        app:spanCount="3"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_cosmetic_product" />
 
                     <View
                         android:id="@+id/view_divider_recommend_product"
@@ -370,10 +373,13 @@
                         android:id="@+id/rv_similar_product_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacingBase"
-                        android:orientation="horizontal"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintTop_toBottomOf="@id/tv_similar_product" />
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="2dp"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/tv_similar_product"
+                        app:spanCount="3"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_cosmetic_product" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
