@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.sopt.oliveyoung.domain.RecentProductInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        tools:context=".presentation.MainActivity">
+
+        <ImageView
+            android:id="@+id/img_cosmetic"
+            android:layout_width="104dp"
+            android:layout_height="120dp"
+            android:background="@drawable/shape_border_radius_10"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{product.image}"
+            app:layout_constraintDimensionRatio="0.85:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_skincare" />
+
+        <TextView
+            android:id="@+id/tv_brand"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{product.brand}"
+            android:textAppearance="@style/TextAppearance.Body2.Pretendard10_Bold"
+            android:textColor="@color/gray_500"
+            android:textSize="10dp"
+            app:layout_constraintStart_toStartOf="@+id/img_cosmetic"
+            app:layout_constraintTop_toBottomOf="@+id/img_cosmetic"
+            tools:text="비욘드" />
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minLines="2"
+            android:text="엔젤 아쿠아 수분 진정 크림 150ml 1+1"
+            android:textAppearance="@style/TextAppearance.Caption1.Pretendard10_Regular"
+            android:textColor="@color/gray_500"
+            android:textSize="10dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_brand"
+            app:layout_constraintTop_toBottomOf="@+id/tv_brand" />
+
+        <TextView
+            android:id="@+id/tv_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.Caption2.Pretendard10_Medium"
+            android:textColor="@color/gray_500"
+            app:layout_constraintStart_toStartOf="@+id/tv_product_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_product_name"
+            app:needsUnit="@{true}"
+            app:price="@{product.cost}"
+            tools:text="30,900원" />
+
+        <TextView
+            android:id="@+id/tv_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{@string/detail_sale_percent_format(product.salePercentage)}"
+            android:textAppearance="@style/TextAppearance.Caption2.Pretendard10_Medium"
+            android:textColor="@color/red_400"
+            app:layout_constraintEnd_toEndOf="@+id/img_cosmetic"
+            app:layout_constraintTop_toBottomOf="@+id/tv_product_name"
+            tools:text="30%" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
