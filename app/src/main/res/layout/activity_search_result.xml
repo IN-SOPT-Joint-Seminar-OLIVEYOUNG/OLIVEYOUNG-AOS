@@ -12,6 +12,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/img_go_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -24,26 +25,26 @@
                 android:id="@+id/et_searchbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="62dp"
-                android:layout_marginTop="41dp"
-                android:layout_marginRight="23dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="23dp"
                 android:background="@drawable/bg_searchbar"
+                android:paddingHorizontal="12dp"
                 android:paddingVertical="11dp"
-                android:paddingStart="12dp"
                 android:textAppearance="@style/TextAppearance.Body4.Pretendard12_SemiBold"
                 android:textColor="@color/gray_500"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="12dp"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_search"
                 app:layout_constraintBottom_toBottomOf="@+id/et_searchbar"
                 app:layout_constraintEnd_toEndOf="@+id/et_searchbar"
-                app:layout_constraintTop_toTopOf="@+id/et_searchbar"
-                app:srcCompat="@drawable/ic_search" />
+                app:layout_constraintTop_toTopOf="@+id/et_searchbar" />
 
             <TextView
                 android:id="@+id/tv_category_title"
@@ -57,7 +58,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_searchbar" />
 
-            <!--TODO 카테고리 텍스트 정령-->
+            <!-- TODO 카테고리 텍스트 정렬 -->
             <TextView
                 android:id="@+id/tv_category_detail"
                 android:layout_width="0dp"
@@ -125,9 +126,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintTop_toBottomOf="@id/tv_brand_title"
+                app:spanCount="5"
                 tools:itemCount="5"
                 tools:layout_editor_absoluteX="15dp"
                 tools:listitem="@layout/item_cosmetic_brand" />
@@ -168,12 +169,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="17dp"
                 android:text="오늘드림"
                 android:textAppearance="@style/TextAppearance.Body6.Pretendard14_Regular"
                 android:textColor="@color/gray_500"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_checkbox"
                 app:layout_constraintStart_toEndOf="@+id/ic_checkbox"
-                app:layout_constraintTop_toBottomOf="@+id/view_divider2" />
+                app:layout_constraintTop_toTopOf="@+id/ic_checkbox" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -188,13 +189,13 @@
                 android:id="@+id/tv_sort_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="17dp"
                 android:layout_marginEnd="18dp"
                 android:text="인기순"
                 android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
                 android:textColor="@color/gray_500"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_checkbox"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_divider2" />
+                app:layout_constraintTop_toTopOf="@+id/tv_checkbox" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_cosmetic_product"

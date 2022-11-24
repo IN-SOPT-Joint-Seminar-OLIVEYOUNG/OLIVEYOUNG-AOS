@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -15,12 +16,11 @@
             android:background="@drawable/bg_popular_search"
             android:paddingHorizontal="10dp"
             android:paddingVertical="6dp"
-            android:text="립밤"
             android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
             android:textColor="@color/gray_500"
-            android:textSize="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="립밤" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

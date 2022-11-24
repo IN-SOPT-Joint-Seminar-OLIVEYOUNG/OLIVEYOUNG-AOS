@@ -11,7 +11,7 @@ object ApiFactory {
     @OptIn(ExperimentalSerializationApi::class)
     val retrofit: Retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl("http://13.125.97.174:3000")
             .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
             .build()
     }

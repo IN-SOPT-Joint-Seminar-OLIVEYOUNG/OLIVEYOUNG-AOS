@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="7dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/tv_recent_search"
+    <data>
+        <variable
+            name="recentSearch"
+            type="com.sopt.oliveyoung.data.dto.response.ResponseSearchDto" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="4dp"
-        android:background="@drawable/bg_recent_search"
-        android:backgroundTint="@color/gray_150"
-        android:paddingHorizontal="8dp"
-        android:paddingVertical="6dp"
-        android:text="립밤"
-        android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
-        android:textColor="@color/gray_500"
-        android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="7dp">
+
+        <TextView
+            android:id="@+id/tv_recent_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:background="@drawable/bg_recent_search"
+            android:backgroundTint="@color/gray_150"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="6dp"
+            android:text="립밤"
+            android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
+            android:textColor="@color/gray_500"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

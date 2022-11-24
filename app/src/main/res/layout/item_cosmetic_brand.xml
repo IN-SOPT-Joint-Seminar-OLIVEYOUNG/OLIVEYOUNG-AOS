@@ -8,7 +8,7 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/img_cosmetic_brand"
-        android:layout_width="56dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/img_skincare"

@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.sopt.oliveyoung.databinding.ItemCosmeticBrandBinding
-import com.sopt.oliveyoung.databinding.ItemCosmeticProductBinding
 import com.sopt.oliveyoung.domain.CosmeticBrandInfo
 
 class CosmeticBrandAdapter(context: Context) : RecyclerView.Adapter<CosmeticBrandAdapter.RepoViewHolder>() {

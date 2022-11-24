@@ -5,35 +5,34 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sopt.oliveyoung.databinding.ItemRecentSearchBinding
-import com.sopt.oliveyoung.domain.RecentSearchInfo
 
 class RecentSearchAdapter(context: Context) :
-    RecyclerView.Adapter<RecentSearchAdapter.RepoViewHolder>() {
+    RecyclerView.Adapter<RecentSearchAdapter.recentSearchViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
-    private var RecentSearchList: List<RecentSearchInfo> = emptyList()
-    lateinit var RecentSearchBinding: ItemRecentSearchBinding
+    private var recentSearchList: List<String> = emptyList()
+    lateinit var recentSearchBinding: ItemRecentSearchBinding
 
-    class RepoViewHolder(
+    class recentSearchViewHolder(
         private val binding: ItemRecentSearchBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: RecentSearchInfo) {
-            binding.tvRecentSearch.text = data.tvRecentSearch
+        fun onBind(data: String) {
+            binding.tvRecentSearch.text = data
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
-        RecentSearchBinding = ItemRecentSearchBinding.inflate(inflater, parent, false)
-        return RepoViewHolder(RecentSearchBinding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): recentSearchViewHolder {
+        recentSearchBinding = ItemRecentSearchBinding.inflate(inflater, parent, false)
+        return recentSearchViewHolder(recentSearchBinding)
     }
 
-    override fun onBindViewHolder(holder: RepoViewHolder, position: Int) {
-        holder.onBind(RecentSearchList[position])
+    override fun onBindViewHolder(holder: recentSearchViewHolder, position: Int) {
+        holder.onBind(recentSearchList[position])
     }
 
-    override fun getItemCount() = RecentSearchList.size
+    override fun getItemCount() = recentSearchList.size
 
-    fun setRecentSearchList(repolist: List<RecentSearchInfo>) {
-        this.RecentSearchList = repolist.toList()
-        notifyItemRangeChanged(0, RecentSearchList.size)
+    fun setRecentSearchList(itemlist: List<String>) {
+        recentSearchList = itemlist
+        notifyItemRangeChanged(0, recentSearchList.size)
     }
 }
