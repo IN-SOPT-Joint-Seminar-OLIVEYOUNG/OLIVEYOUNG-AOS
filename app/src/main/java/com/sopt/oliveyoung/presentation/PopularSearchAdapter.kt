@@ -10,8 +10,8 @@ import com.sopt.oliveyoung.domain.PopularSearchInfo
 class PopularSearchAdapter(context: Context) :
     RecyclerView.Adapter<PopularSearchAdapter.RepoViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
-    private var PopularSearchList: List<PopularSearchInfo> = emptyList()
-    lateinit var PopularSearchBinding: ItemPopularSearchBinding
+    private var popularSearchList: List<PopularSearchInfo> = emptyList()
+    lateinit var popularSearchBinding: ItemPopularSearchBinding
 
     class RepoViewHolder(
         private val binding: ItemPopularSearchBinding
@@ -22,18 +22,18 @@ class PopularSearchAdapter(context: Context) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
-        PopularSearchBinding = ItemPopularSearchBinding.inflate(inflater, parent, false)
-        return RepoViewHolder(PopularSearchBinding)
+        popularSearchBinding = ItemPopularSearchBinding.inflate(inflater, parent, false)
+        return RepoViewHolder(popularSearchBinding)
     }
 
     override fun onBindViewHolder(holder: RepoViewHolder, position: Int) {
-        holder.onBind(PopularSearchList[position])
+        holder.onBind(popularSearchList[position])
     }
 
-    override fun getItemCount() = PopularSearchList.size
+    override fun getItemCount() = popularSearchList.size
 
     fun setPopularSearchList(repolist: List<PopularSearchInfo>) {
-        this.PopularSearchList = repolist.toList()
-        notifyItemRangeChanged(0, PopularSearchList.size)
+        this.popularSearchList = repolist.toList()
+        notifyItemRangeChanged(0, popularSearchList.size)
     }
 }

@@ -14,9 +14,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OliveYoung"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".presentation.MainActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".presentation.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.SearchResultActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".presentation.SearchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,15 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".presentation.DetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.SearchResultActivity"
-            android:exported="false"></activity>
-        <activity
-            android:name=".presentation.SearchActivity"
-            android:exported="false"></activity>
 
     </application>
 
