@@ -26,6 +26,9 @@ class ProductDetailViewModel : ViewModel() {
     private val _isLiked = MutableLiveData<Boolean>()
     val isLiked: LiveData<Boolean> get() = _isLiked
 
+    private val _isFolded = MutableLiveData(false)
+    val isFolded: LiveData<Boolean> get() = _isFolded
+
     init {
         fetchProductDetail()
     }
@@ -54,6 +57,11 @@ class ProductDetailViewModel : ViewModel() {
                 Timber.d("좋아요 업데이트 실패: $code")
             }
         )
+    }
+
+    fun setFolded() {
+        if (isFolded.value == null) return
+        _isFolded.value = !(isFolded.value!!)
     }
 }
 

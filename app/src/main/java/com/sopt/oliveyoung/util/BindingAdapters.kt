@@ -27,3 +27,8 @@ fun View.setSelected(isSelected: Boolean?) {
     if (isSelected == null) return
     this.isSelected = isSelected
 }
+
+@BindingAdapter("visibility")
+fun View.setVisibility(isVisible: Boolean?) {
+    visibility = if (isVisible == false) View.VISIBLE else View.GONE
+}

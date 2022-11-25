@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -266,7 +267,8 @@
                         layout="@layout/layout_detail_deliverey_section"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/view_divider_product_type" />
+                        app:layout_constraintTop_toBottomOf="@id/view_divider_product_type"
+                        bind:viewModel="@{viewModel}" />
 
                     <View
                         android:id="@+id/view_divider_content"
@@ -407,8 +409,8 @@
             <ImageButton
                 android:id="@+id/btn_like"
                 style="@style/Style.SquareButton"
-                app:isSelected="@{viewModel.isLiked}"
                 android:src="@drawable/selector_menu_icon_like"
+                app:isSelected="@{viewModel.isLiked}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
