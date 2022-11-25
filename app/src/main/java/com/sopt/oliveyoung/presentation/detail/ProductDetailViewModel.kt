@@ -1,4 +1,4 @@
-package com.sopt.oliveyoung.presentation
+package com.sopt.oliveyoung.presentation.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

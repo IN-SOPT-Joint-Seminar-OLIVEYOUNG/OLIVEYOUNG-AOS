@@ -1,9 +1,10 @@
-package com.sopt.oliveyoung.presentation
+package com.sopt.oliveyoung.presentation.detail
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.sopt.oliveyoung.R
 import com.sopt.oliveyoung.databinding.ActivityDetailBinding
+import com.sopt.oliveyoung.presentation.CosmeticProductAdapter
 import com.sopt.oliveyoung.util.binding.BindingActivity
 
 class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_detail) {
