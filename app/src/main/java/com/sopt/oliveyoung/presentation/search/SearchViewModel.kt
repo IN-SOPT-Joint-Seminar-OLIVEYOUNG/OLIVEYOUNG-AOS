@@ -12,16 +12,16 @@ import timber.log.Timber
 
 class SearchViewModel : ViewModel() {
     private val oliveYoungService = ServicePool.oliveYoungService
-    val _searchData = MutableLiveData<ResponseSearchDto?>()
+    private val _searchData = MutableLiveData<ResponseSearchDto?>()
     val searchData: LiveData<ResponseSearchDto?>
         get() = _searchData
-    val _searchProductData = MutableLiveData<List<CosmeticProductInfo>?>()
+    private val _searchProductData = MutableLiveData<List<CosmeticProductInfo>?>()
     val searchProductData: LiveData<List<CosmeticProductInfo>?>
         get() = _searchProductData
-    val _searchResultProductData = MutableLiveData<List<CosmeticProductInfo>?>()
+    private val _searchResultProductData = MutableLiveData<List<CosmeticProductInfo>?>()
     val searchResultProductData: LiveData<List<CosmeticProductInfo>?>
         get() = _searchResultProductData
-    val _searchResultBrandData = MutableLiveData<List<CosmeticBrandInfo>?>()
+    private val _searchResultBrandData = MutableLiveData<List<CosmeticBrandInfo>?>()
     val searchResultBrandData: LiveData<List<CosmeticBrandInfo>?>
         get() = _searchResultBrandData
 
@@ -30,7 +30,7 @@ class SearchViewModel : ViewModel() {
         fetchSearchProduct()
     }
 
-    fun fetchSearchProduct() {
+    private fun fetchSearchProduct() {
         oliveYoungService.getSearchList()
             .enqueueUtil({ result ->
                 _searchProductData.value = result.data.toCosmeticProductInfo(result.data.products)
