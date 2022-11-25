@@ -32,6 +32,9 @@ class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_
         binding.btnBack.setOnClickListener {
             finish()
         }
+        binding.btnLike.setOnClickListener {
+            viewModel.updateProductLikeState()
+        }
     }
 
     private fun addObservers() {

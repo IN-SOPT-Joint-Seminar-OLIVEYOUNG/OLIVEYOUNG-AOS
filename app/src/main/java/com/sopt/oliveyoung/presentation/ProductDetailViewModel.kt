@@ -3,7 +3,6 @@ package com.sopt.oliveyoung.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sopt.oliveyoung.data.OliveYoungService
 import com.sopt.oliveyoung.data.ServicePool
 import com.sopt.oliveyoung.domain.CosmeticProductInfo
 import com.sopt.oliveyoung.domain.entity.CosmeticProductDetail
@@ -24,6 +23,9 @@ class ProductDetailViewModel : ViewModel() {
     val recommendProduct: LiveData<List<CosmeticProductInfo>?>
         get() = _recommendProduct
 
+    private val _isLiked = MutableLiveData<Boolean>()
+    val isLiked: LiveData<Boolean> get() = _isLiked
+
     init {
         fetchProductDetail()
     }
@@ -35,11 +37,23 @@ class ProductDetailViewModel : ViewModel() {
                     _productDetail.value = toProductDetail(product)
                     _similarProduct.value = toCosmeticProductInfoFromSimilars(similars)
                     _recommendProduct.value = toCosmeticProductInfoFromRecommends(recommends)
+                    _isLiked.value = product.isLiked
                 }
                 Timber.i("상품 상세정보 조회 성공: $result")
             }, { code ->
                 Timber.d("상품 상세정보 조회 실패: $code")
             })
+    }
+
+    fun updateProductLikeState() {
+        oliveYoungService.updateProductLikeState(1).enqueueUtil(
+            { result ->
+                _isLiked.value = result.data.isLiked
+                Timber.i("좋아요 업데이트 성공: $result")
+            }, { code ->
+                Timber.d("좋아요 업데이트 실패: $code")
+            }
+        )
     }
 }
 

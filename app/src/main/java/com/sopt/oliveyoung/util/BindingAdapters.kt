@@ -1,5 +1,6 @@
 package com.sopt.oliveyoung.util
 
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -19,4 +20,10 @@ fun TextView.setPriceFormat(price: Number?, needsUnit: Boolean = false) {
 @BindingAdapter("imageUrl")
 fun ImageView.setImageUrl(imageUrl: String?) {
     load(imageUrl)
+}
+
+@BindingAdapter("isSelected")
+fun View.setSelected(isSelected: Boolean?) {
+    if (isSelected == null) return
+    this.isSelected = isSelected
 }
