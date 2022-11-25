@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.sopt.oliveyoung.databinding.ItemCosmeticProductBinding
 import com.sopt.oliveyoung.domain.CosmeticProductInfo
 
@@ -32,8 +33,8 @@ class CosmeticProductAdapter(context: Context) :
 
     override fun getItemCount() = cosmeticproductList.size
 
-    fun setCosmeticList(itemlist: List<CosmeticProductInfo>) {
-        this.cosmeticproductList = itemlist.toList()
+    fun setCosmeticList(items: List<CosmeticProductInfo>) {
+        this.cosmeticproductList = items.toList()
         notifyItemRangeChanged(0, cosmeticproductList.size)
     }
 }

@@ -1,4 +1,4 @@
-package com.sopt.oliveyoung.presentation
+package com.sopt.oliveyoung.presentation.search
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -31,8 +31,8 @@ class RecentSearchAdapter(context: Context) :
 
     override fun getItemCount() = recentSearchList.size
 
-    fun setRecentSearchList(itemlist: List<String>) {
-        recentSearchList = itemlist
+    fun setRecentSearchList(items: List<String>) {
+        recentSearchList = items
         notifyItemRangeChanged(0, recentSearchList.size)
     }
 }

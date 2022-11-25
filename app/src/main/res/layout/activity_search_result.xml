@@ -12,17 +12,17 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/img_go_back"
+                android:id="@+id/iv_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                app:layout_constraintBottom_toBottomOf="@+id/et_searchbar"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_searchbar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/et_searchbar"
+                app:layout_constraintTop_toTopOf="@+id/tv_searchbar"
                 app:srcCompat="@drawable/ic_back" />
 
-            <EditText
-                android:id="@+id/et_searchbar"
+            <TextView
+                android:id="@+id/tv_searchbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="62dp"
@@ -38,13 +38,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/iv_search_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
                 android:src="@drawable/ic_search"
-                app:layout_constraintBottom_toBottomOf="@+id/et_searchbar"
-                app:layout_constraintEnd_toEndOf="@+id/et_searchbar"
-                app:layout_constraintTop_toTopOf="@+id/et_searchbar" />
+                app:layout_constraintBottom_toBottomOf="@+id/tv_searchbar"
+                app:layout_constraintEnd_toEndOf="@+id/tv_searchbar"
+                app:layout_constraintTop_toTopOf="@+id/tv_searchbar" />
 
             <TextView
                 android:id="@+id/tv_category_title"
@@ -56,7 +57,7 @@
                 android:textAppearance="@style/TextAppearance.Subhead3.Pretendard14_SemiBold"
                 android:textColor="@color/gray_500"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_searchbar" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_searchbar" />
 
             <!-- TODO 카테고리 텍스트 정렬 -->
             <TextView
@@ -71,7 +72,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/tv_category_title"
-                app:layout_constraintTop_toBottomOf="@+id/et_searchbar" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_searchbar" />
 
             <TextView
                 android:id="@+id/tv_funtion_title"
@@ -212,7 +213,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_product_title"
                 app:spanCount="2"
                 tools:listitem="@layout/item_cosmetic_product" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,4 +1,4 @@
-package com.sopt.oliveyoung.presentation
+package com.sopt.oliveyoung.presentation.search
 
 import android.content.Context
 import android.view.LayoutInflater
