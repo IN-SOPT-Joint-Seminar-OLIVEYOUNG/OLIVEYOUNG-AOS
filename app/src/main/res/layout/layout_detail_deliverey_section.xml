@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sopt.oliveyoung.presentation.detail.ProductDetailViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,8 +81,10 @@
             style="@style/Style.ImageButton.Basic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:onClick="@{() -> viewModel.setFolded()}"
+            android:padding="8dp"
             android:src="@drawable/selector_dropdown_button"
+            app:isSelected="@{viewModel.isFolded}"
             app:layout_constraintBottom_toBottomOf="@id/tv_today_delivery_fee"
             app:layout_constraintStart_toEndOf="@id/tv_today_delivery_fee"
             app:layout_constraintTop_toTopOf="@id/tv_today_delivery_fee" />
@@ -89,7 +98,8 @@
             android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
             android:textColor="@color/gray_500"
             app:layout_constraintStart_toStartOf="@id/tv_delivery_fee"
-            app:layout_constraintTop_toBottomOf="@id/tv_today_delivery_fee" />
+            app:layout_constraintTop_toBottomOf="@id/tv_today_delivery_fee"
+            app:visibility="@{!viewModel.isFolded}" />
 
         <View
             android:id="@+id/view_divider_delivery_section"

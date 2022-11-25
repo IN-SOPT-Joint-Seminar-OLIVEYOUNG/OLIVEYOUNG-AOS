@@ -1,4 +1,4 @@
-package com.sopt.oliveyoung.util.extensions
+package com.sopt.oliveyoung.util
 
 import timber.log.Timber
 
