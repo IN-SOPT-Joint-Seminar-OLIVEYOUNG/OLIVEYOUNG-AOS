@@ -11,7 +11,7 @@ class CosmeticBrandAdapter(context: Context) :
     RecyclerView.Adapter<CosmeticBrandAdapter.RepoViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
     private var cosmeticBrandList: List<CosmeticBrandInfo> = emptyList()
-    lateinit var cosmeticBrandBinding: ItemCosmeticBrandBinding
+    private lateinit var cosmeticBrandBinding: ItemCosmeticBrandBinding
 
     class RepoViewHolder(
         private val binding: ItemCosmeticBrandBinding
@@ -32,8 +32,8 @@ class CosmeticBrandAdapter(context: Context) :
 
     override fun getItemCount() = cosmeticBrandList.size
 
-    fun setCosmeticBrandList(repolist: List<CosmeticBrandInfo>) {
-        this.cosmeticBrandList = repolist.toList()
+    fun setCosmeticBrandList(items: List<CosmeticBrandInfo>) {
+        this.cosmeticBrandList = items
         notifyItemRangeChanged(0, cosmeticBrandList.size)
     }
 }

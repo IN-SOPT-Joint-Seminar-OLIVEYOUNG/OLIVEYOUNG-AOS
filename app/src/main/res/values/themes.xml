@@ -72,6 +72,16 @@
         <item name="android:fontFamily">@font/pretendard_r</item>
     </style>
 
+    <style name="TextAppearance.Body7.Inter10_Regular" parent="">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/inter_r</item>
+    </style>
+
+    <style name="TextAppearance.Body8.Inter8_Regular" parent="">
+        <item name="android:textSize">8sp</item>
+        <item name="android:fontFamily">@font/inter_r</item>
+    </style>
+
     <style name="TextAppearance.Caption1.Pretendard10_Regular" parent="">
         <item name="android:textSize">10sp</item>
         <item name="android:fontFamily">@font/pretendard_r</item>

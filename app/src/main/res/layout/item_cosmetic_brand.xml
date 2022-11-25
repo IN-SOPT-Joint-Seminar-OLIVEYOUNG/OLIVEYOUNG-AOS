@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="brand"
             type="com.sopt.oliveyoung.domain.CosmeticBrandInfo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="6dp">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/img_cosmetic_brand"
-            android:layout_width="wrap_content"
+            android:id="@+id/iv_brand_image"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            android:src="@{brand.imgBrand}"
+            app:imageUrl="@{brand.imgBrand}"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -30,11 +31,13 @@
             android:id="@+id/tv_cosmetic_brand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:text="@{brand.brandName}"
             android:textAppearance="@style/TextAppearance.Body2.Pretendard10_Bold"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="@+id/img_cosmetic_brand"
-            app:layout_constraintStart_toStartOf="@+id/img_cosmetic_brand"
-            app:layout_constraintTop_toBottomOf="@+id/img_cosmetic_brand" />
+            app:layout_constraintEnd_toEndOf="@id/iv_brand_image"
+            app:layout_constraintStart_toStartOf="@id/iv_brand_image"
+            app:layout_constraintTop_toBottomOf="@id/iv_brand_image"
+            tools:text="바이오더마" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

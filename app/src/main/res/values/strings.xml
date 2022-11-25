@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Olive Young</string>
 
+    <!-- Global -->
+    <string name="more">더보기</string>
+
     <!-- Menu -->
     <string name="menu_home">Home</string>
     <string name="menu_like">Like</string>

@@ -1,17 +1,19 @@
 package com.sopt.oliveyoung.presentation.search
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.sopt.oliveyoung.R
 import com.sopt.oliveyoung.databinding.ActivitySearchResultBinding
 import com.sopt.oliveyoung.presentation.CosmeticBrandAdapter
 import com.sopt.oliveyoung.presentation.CosmeticProductAdapter
+import com.sopt.oliveyoung.presentation.detail.DetailActivity
 import com.sopt.oliveyoung.util.binding.BindingActivity
 
 class SearchResultActivity :
     BindingActivity<ActivitySearchResultBinding>(R.layout.activity_search_result) {
     private val cosmeticBrandAdapter = CosmeticBrandAdapter(this)
-    private val cosmeticProductAdapter = CosmeticProductAdapter(this)
+    private val cosmeticProductAdapter = CosmeticProductAdapter(this, ::moveToProductDetail)
     private val viewModel: SearchViewModel by viewModels()
     private var searchKeyword: String? = null
 
@@ -45,5 +47,9 @@ class SearchResultActivity :
             if (product != null)
                 cosmeticProductAdapter.setCosmeticList(product)
         }
+    }
+
+    private fun moveToProductDetail() {
+        startActivity(Intent(this, DetailActivity::class.java))
     }
 }
