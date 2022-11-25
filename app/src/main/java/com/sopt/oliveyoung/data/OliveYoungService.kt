@@ -12,7 +12,7 @@ interface OliveYoungService {
     fun getSearchList(): Call<ResponseBase<ResponseSearchDto>>
 
     @GET("/search?name=")
-    fun getSearchResultList(@Query("name") name: String ): Call<ResponseBase<ResponseSearchResultDto>>
+    fun getSearchResult(@Query("name") name: String ): Call<ResponseBase<ResponseSearchResultDto>>
 
     @GET("/product/{id}")
     fun getProductDetail(@Path("id") itemId: Int): Call<ResponseBase<ResponseProductDetailDto>>

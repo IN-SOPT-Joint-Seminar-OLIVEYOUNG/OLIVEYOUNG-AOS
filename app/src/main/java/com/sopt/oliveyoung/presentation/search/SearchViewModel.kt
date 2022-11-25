@@ -51,7 +51,7 @@ class SearchViewModel : ViewModel() {
     }
 
     fun fetchSearchResultProduct(searchKeyword: String) {
-        oliveYoungService.getSearchResultList(searchKeyword)
+        oliveYoungService.getSearchResult(searchKeyword)
             .enqueueUtil({ result ->
                 result.data.run {
                     _searchResultProductData.value = toCosmeticProductInfo(result.data.product)
