@@ -7,33 +7,39 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sopt.oliveyoung.databinding.ItemCosmeticProductBinding
 import com.sopt.oliveyoung.domain.CosmeticProductInfo
 
-class CosmeticProductAdapter(context: Context) :
-    RecyclerView.Adapter<CosmeticProductAdapter.itemViewHolder>() {
+class CosmeticProductAdapter(
+    context: Context,
+    private val onItemClickListener: (() -> Unit)? = null,
+) :
+    RecyclerView.Adapter<CosmeticProductAdapter.ProductViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
-    private var cosmeticproductList: List<CosmeticProductInfo> = emptyList()
-    lateinit var cosmeticProductBinding: ItemCosmeticProductBinding
+    private var cosmeticProductList: List<CosmeticProductInfo> = emptyList()
+    private lateinit var cosmeticProductBinding: ItemCosmeticProductBinding
 
-    class itemViewHolder(
-        private val binding: ItemCosmeticProductBinding
+    class ProductViewHolder(
+        private val binding: ItemCosmeticProductBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: CosmeticProductInfo) {
+        fun onBind(data: CosmeticProductInfo, onItemClickListener: (() -> Unit)?) {
             binding.product = data
+            onItemClickListener?.let { listener ->
+                binding.root.setOnClickListener { listener() }
+            }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         cosmeticProductBinding = ItemCosmeticProductBinding.inflate(inflater, parent, false)
-        return itemViewHolder(cosmeticProductBinding)
+        return ProductViewHolder(cosmeticProductBinding)
     }
 
-    override fun onBindViewHolder(holder: itemViewHolder, position: Int) {
-        holder.onBind(cosmeticproductList[position])
+    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
+        holder.onBind(cosmeticProductList[position], onItemClickListener)
     }
 
-    override fun getItemCount() = cosmeticproductList.size
+    override fun getItemCount() = cosmeticProductList.size
 
-    fun setCosmeticList(itemlist: List<CosmeticProductInfo>) {
-        this.cosmeticproductList = itemlist.toList()
-        notifyItemRangeChanged(0, cosmeticproductList.size)
+    fun setCosmeticList(items: List<CosmeticProductInfo>) {
+        this.cosmeticProductList = items.toList()
+        notifyItemRangeChanged(0, cosmeticProductList.size)
     }
 }

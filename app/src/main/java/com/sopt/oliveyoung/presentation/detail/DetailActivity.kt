@@ -9,7 +9,7 @@ import com.sopt.oliveyoung.util.binding.BindingActivity
 
 class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_detail) {
     private val viewModel: ProductDetailViewModel by viewModels()
-    private val similarProductAdapter = CosmeticProductAdapter(this)
+    private val similarProductAdapter = CosmeticProductAdapter(this, )
     private val recommendProductAdapter = CosmeticProductAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {

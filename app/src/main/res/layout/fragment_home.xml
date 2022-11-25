@@ -9,7 +9,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:context=".presentation.HomeFragment">
 
             <com.google.android.material.tabs.TabLayout
@@ -77,35 +77,35 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/ic_serch"
+                android:id="@+id/iv_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="41dp"
-                android:layout_marginEnd="79dp"
+                android:layout_marginEnd="32dp"
                 android:src="@drawable/ic_search"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="@id/iv_oliveyoung"
+                app:layout_constraintEnd_toStartOf="@id/iv_cart"
+                app:layout_constraintTop_toTopOf="@id/iv_oliveyoung" />
 
             <ImageView
-                android:id="@+id/ic_cart"
+                android:id="@+id/iv_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
                 android:src="@drawable/ic_cart"
+                app:layout_constraintBottom_toBottomOf="@id/iv_oliveyoung"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@id/iv_oliveyoung" />
 
             <ImageView
                 android:id="@+id/iv_main_banner"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginTop="142dp"
+                android:layout_marginTop="1dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_product_sample"
+                android:src="@drawable/img_black_friday_banner"
                 app:layout_constraintDimensionRatio="1:0.6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/tab" />
 
             <TextView
                 android:id="@+id/tv_recommended_product"
@@ -118,27 +118,26 @@
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/rv_home_menu" />
 
-            <ImageView
-                android:id="@+id/ic_more"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="51dp"
-                android:src="@drawable/ic_more"
-                app:layout_constraintEnd_toEndOf="@id/gl_end"
-                app:layout_constraintTop_toBottomOf="@id/rv_home_menu" />
-
             <TextView
                 android:id="@+id/tv_more_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
                 android:layout_marginEnd="3dp"
-                android:text="더보기"
+                android:text="@string/more"
                 android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
                 android:textColor="@color/gray_500"
-                app:layout_constraintEnd_toStartOf="@id/ic_more"
-                app:layout_constraintTop_toBottomOf="@id/rv_home_menu" />
+                app:layout_constraintBottom_toBottomOf="@id/tv_recommended_product"
+                app:layout_constraintEnd_toStartOf="@id/iv_more"
+                app:layout_constraintTop_toTopOf="@id/tv_recommended_product" />
+
+            <ImageView
+                android:id="@+id/iv_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_more"
+                app:layout_constraintBottom_toBottomOf="@id/tv_more_1"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintTop_toTopOf="@id/tv_more_1" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_similar_product_list"
@@ -158,7 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="이 브래드 어떠세요?"
+                android:text="이 브랜드 어떠세요?"
                 android:textAppearance="@style/TextAppearance.Headline1.Pretendard16_Bold"
                 android:textColor="@color/gray_500"
                 android:textSize="16sp"
@@ -171,11 +170,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintTop_toBottomOf="@id/tv_recommended_brand"
+                app:spanCount="5"
                 tools:itemCount="5"
-                tools:layout_editor_absoluteX="15dp"
                 tools:listitem="@layout/item_cosmetic_brand" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -194,16 +192,25 @@
                 android:id="@+id/tv_more_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="34.5dp"
-                android:text="더보기 >"
+                android:layout_marginEnd="3dp"
+                android:text="@string/more"
                 android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
                 android:textColor="@color/gray_500"
-                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_recommended_brand"
+                app:layout_constraintEnd_toStartOf="@id/iv_more_2"
+                app:layout_constraintTop_toTopOf="@id/tv_recommended_brand" />
+
+            <ImageView
+                android:id="@+id/iv_more_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_more"
+                app:layout_constraintBottom_toBottomOf="@id/tv_more_2"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
-                app:layout_constraintTop_toBottomOf="@id/rv_similar_product_list" />
+                app:layout_constraintTop_toTopOf="@id/tv_more_2" />
 
             <TextView
-                android:id="@+id/tv_onlyoliveyoung"
+                android:id="@+id/tv_only_oliveyoung"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -217,13 +224,22 @@
                 android:id="@+id/tv_more_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="더보기 >"
+                android:layout_marginEnd="3dp"
+                android:text="@string/more"
                 android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
                 android:textColor="@color/gray_500"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@id/tv_onlyoliveyoung"
+                app:layout_constraintBottom_toBottomOf="@id/tv_only_oliveyoung"
+                app:layout_constraintEnd_toStartOf="@id/iv_more_3"
+                app:layout_constraintTop_toTopOf="@id/tv_only_oliveyoung" />
+
+            <ImageView
+                android:id="@+id/iv_more_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_more"
+                app:layout_constraintBottom_toBottomOf="@id/tv_more_3"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
-                app:layout_constraintTop_toTopOf="@id/tv_onlyoliveyoung" />
+                app:layout_constraintTop_toTopOf="@id/tv_more_3" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_menu"
@@ -232,44 +248,45 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="@dimen/spacingBase"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_main_banner"
                 app:spanCount="5"
                 tools:listitem="@layout/item_home_menu" />
 
             <ImageView
-                android:id="@+id/img_onlyoliveyoung_banner1"
+                android:id="@+id/iv_oliveyoung_banner1"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/img_onlyoliveyoung_banner1"
-                app:layout_constraintDimensionRatio="1:0.231"
+                app:layout_constraintDimensionRatio="1:0.23"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/tv_onlyoliveyoung" />
+                app:layout_constraintTop_toBottomOf="@id/tv_only_oliveyoung" />
 
             <ImageView
-                android:id="@+id/img_onlyoliveyoung_banner2"
+                android:id="@+id/iv_oliveyoung_banner2"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/img_onlyoliveyoung_banner2"
-                app:layout_constraintDimensionRatio="1:0.237"
+                app:layout_constraintDimensionRatio="1:0.23"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/img_onlyoliveyoung_banner1" />
+                app:layout_constraintTop_toBottomOf="@id/iv_oliveyoung_banner1" />
 
             <ImageView
-                android:id="@+id/img_onlyoliveyoung_banner3"
+                android:id="@+id/iv_oliveyoung_banner3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/img_onlyoliveyoung_banner3"
-                app:layout_constraintDimensionRatio="1:0.228"
+                app:layout_constraintDimensionRatio="1:0.23"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/img_onlyoliveyoung_banner2" />
+                app:layout_constraintTop_toBottomOf="@id/iv_oliveyoung_banner2" />
 
             <TextView
                 android:id="@+id/tv_month_keyword_story"
@@ -280,7 +297,7 @@
                 android:textAppearance="@style/TextAppearance.Headline1.Pretendard16_Bold"
                 android:textColor="@color/gray_500"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/img_onlyoliveyoung_banner3" />
+                app:layout_constraintTop_toBottomOf="@id/iv_oliveyoung_banner3" />
 
             <TextView
                 android:id="@+id/tv_more_4"
@@ -292,10 +309,10 @@
                 android:textColor="@color/gray_500"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
-                app:layout_constraintTop_toBottomOf="@id/img_onlyoliveyoung_banner3" />
+                app:layout_constraintTop_toBottomOf="@id/iv_oliveyoung_banner3" />
 
             <ImageView
-                android:id="@+id/img_month_keyword_story_collagen"
+                android:id="@+id/iv_collagen_banner"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="12dp"
@@ -306,7 +323,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_month_keyword_story" />
 
             <ImageView
-                android:id="@+id/img_month_keyword_story_scrub"
+                android:id="@+id/iv_scrub_banner"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="12dp"
@@ -314,7 +331,7 @@
                 app:layout_constraintDimensionRatio="1:0.25"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/img_month_keyword_story_collagen" />
+                app:layout_constraintTop_toBottomOf="@id/iv_collagen_banner" />
 
             <View
                 android:id="@+id/view_divider"
@@ -322,7 +339,7 @@
                 android:layout_height="7dp"
                 android:layout_marginTop="32dp"
                 android:background="@color/gray_150"
-                app:layout_constraintTop_toBottomOf="@id/img_month_keyword_story_scrub" />
+                app:layout_constraintTop_toBottomOf="@id/iv_scrub_banner" />
 
             <LinearLayout
                 android:id="@+id/layout_today_special_price"
@@ -380,6 +397,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="3dp"
                         android:text="온라인몰 콜센터"
+                        android:textAppearance="@style/TextAppearance.Body7.Inter10_Regular"
                         android:textColor="@color/gray_500" />
 
                     <View
@@ -399,6 +417,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="3dp"
                         android:text="매장 콜센터"
+                        android:textAppearance="@style/TextAppearance.Body7.Inter10_Regular"
                         android:textColor="@color/gray_500" />
 
                     <View
@@ -412,6 +431,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="1:1 문의"
+                        android:textAppearance="@style/TextAppearance.Body7.Inter10_Regular"
                         android:textColor="@color/gray_500" />
 
                     <View
@@ -425,6 +445,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="고객센터"
+                        android:textAppearance="@style/TextAppearance.Body7.Inter10_Regular"
                         android:textColor="@color/gray_500" />
 
                 </LinearLayout>
@@ -444,6 +465,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="씨제이올리브영(주)"
+                        android:textAppearance="@style/TextAppearance.Body7.Inter10_Regular"
                         android:textColor="@color/gray_500"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
@@ -504,6 +526,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="로그아웃"
+                        android:textAppearance="@style/TextAppearance.Body8.Inter8_Regular"
                         android:textColor="@color/gray_500" />
 
                     <View
@@ -517,6 +540,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="이용약관"
+                        android:textAppearance="@style/TextAppearance.Body8.Inter8_Regular"
                         android:textColor="@color/gray_500" />
 
                     <View
@@ -529,8 +553,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
+                        android:fontFamily="@font/inter_sm"
                         android:text="개인정보처리방침"
-                        android:textColor="@color/gray_500" />
+                        android:textColor="@color/gray_500"
+                        android:textSize="8sp" />
 
                     <View
                         android:layout_width="1dp"
@@ -543,6 +569,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="고객센터"
+                        android:textAppearance="@style/TextAppearance.Body8.Inter8_Regular"
                         android:textColor="@color/gray_500" />
 
                 </LinearLayout>
@@ -553,6 +580,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
                     android:text="법적고지"
+                    android:textAppearance="@style/TextAppearance.Body8.Inter8_Regular"
                     android:textColor="@color/gray_500"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
