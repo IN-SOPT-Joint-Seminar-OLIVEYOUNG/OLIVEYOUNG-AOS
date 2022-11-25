@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingHorizontal="6dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/img_cosmetic_brand"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/img_skincare"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/Style.CircleImageView.Half"
-        tools:src="@drawable/img_skincare" />
+    <data>
+        <variable
+            name="brand"
+            type="com.sopt.oliveyoung.domain.CosmeticBrandInfo" />
+    </data>
 
-    <TextView
-        android:id="@+id/tv_cosmetic_brand"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="바이오더마"
-        android:textAppearance="@style/TextAppearance.Body2.Pretendard10_Bold"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/img_cosmetic_brand"
-        app:layout_constraintStart_toStartOf="@+id/img_cosmetic_brand"
-        app:layout_constraintTop_toBottomOf="@+id/img_cosmetic_brand" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:paddingHorizontal="6dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_cosmetic_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@{brand.imgBrand}"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/Style.CircleImageView.Half"
+            tools:src="@drawable/img_skincare" />
+
+        <TextView
+            android:id="@+id/tv_cosmetic_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{brand.brandName}"
+            android:textAppearance="@style/TextAppearance.Body2.Pretendard10_Bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/img_cosmetic_brand"
+            app:layout_constraintStart_toStartOf="@+id/img_cosmetic_brand"
+            app:layout_constraintTop_toBottomOf="@+id/img_cosmetic_brand" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

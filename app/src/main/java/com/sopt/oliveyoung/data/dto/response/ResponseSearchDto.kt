@@ -1,5 +1,6 @@
 package com.sopt.oliveyoung.data.dto.response
 
+import com.sopt.oliveyoung.domain.CosmeticProductInfo
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -15,4 +16,15 @@ data class ResponseSearchDto(
         val saledPrice: String,
         val salePercent: String,
     )
+
+    fun toCosmeticProductInfo(products: List<ResponseSearchDto.Product>) =
+        products.map { product ->
+            CosmeticProductInfo(
+                product.mainImg,
+                product.brandName,
+                product.name,
+                product.saledPrice,
+                product.salePercent
+            )
+        }
 }

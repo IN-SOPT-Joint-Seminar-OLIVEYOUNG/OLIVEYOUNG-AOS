@@ -20,7 +20,7 @@ class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_
 
         initLayout()
         addListeners()
-        addObservers()
+        //addObservers()
     }
 
     private fun initLayout() {
@@ -38,13 +38,13 @@ class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_
         }
     }
 
-    private fun addObservers() {
-        viewModel.similarProduct.observe(this) { similars ->
-            similarProductAdapter.setCosmeticList(similars ?: return@observe)
-        }
-
-        viewModel.recommendProduct.observe(this) { recommends ->
-            recommendProductAdapter.setCosmeticList(recommends ?: return@observe)
-        }
-    }
+//    private fun addObservers() {
+//        viewModel.similarProduct.observe(this) { similars ->
+//            similarProductAdapter.setCosmeticList(similars ?: return@observe)
+//        }
+//
+//        viewModel.recommendProduct.observe(this) { recommends ->
+//            recommendProductAdapter.setCosmeticList(recommends ?: return@observe)
+//        }
+//    }
 }
