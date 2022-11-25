@@ -5,5 +5,5 @@ data class CosmeticProductInfo(
     val brand: String,
     val productName: String,
     val cost: String,
-    val salePercentage: String
+    val salePercentage: String? = null
 )

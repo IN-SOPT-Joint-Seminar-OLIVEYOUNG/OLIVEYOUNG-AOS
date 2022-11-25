@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sopt.oliveyoung.presentation.ProductDetailViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -56,16 +63,17 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/iv_item_image"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/img_product_sample"
-                    app:layout_constraintDimensionRatio="1.5:1"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:imageUrl="@{viewModel.productDetail.mainImg}"
+                    app:layout_constraintDimensionRatio="1:0.65"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/img_product_sample" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -104,7 +112,7 @@
                         android:id="@+id/tv_brand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="에스트라"
+                        android:text="@{viewModel.productDetail.brandName}"
                         android:textAppearance="@style/TextAppearance.Body1.Pretendard12_Regular"
                         android:textColor="@color/gray_500"
                         app:layout_constraintStart_toStartOf="@id/gl_start"
@@ -126,7 +134,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="에스트라  크림 80ml 더블 기획"
+                        android:text="@{viewModel.productDetail.name}"
                         android:textAppearance="@style/TextAppearance.Display1.Pretendard22_Medium"
                         android:textColor="@color/gray_500"
                         app:layout_constraintEnd_toEndOf="@id/gl_end"
@@ -139,11 +147,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="28dp"
+                        android:text="@{viewModel.productDetail.originalPrice}"
                         android:textAppearance="@style/TextAppearance.Display1.Pretendard22_Medium"
                         android:textColor="@color/gray_500"
                         app:layout_constraintStart_toStartOf="@id/gl_start"
                         app:layout_constraintTop_toBottomOf="@id/tv_item_name"
-                        app:price="@{30900}"
                         tools:text="30,900" />
 
                     <TextView
@@ -151,12 +159,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacingBase"
+                        android:text="@{viewModel.productDetail.saledPrice}"
                         android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
                         android:textColor="@color/gray_150"
                         app:layout_constraintBottom_toBottomOf="@id/tv_won"
                         app:layout_constraintStart_toEndOf="@id/tv_won"
-                        app:needsUnit="@{true}"
-                        app:price="@{55800}"
                         tools:text="55,800원" />
 
                     <TextView
@@ -185,7 +192,7 @@
                         android:id="@+id/tv_item_sale_percent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{@string/detail_sale_percent_format(30)}"
+                        android:text="@{viewModel.productDetail.salePercent}"
                         android:textAppearance="@style/TextAppearance.Display1.Pretendard22_Medium"
                         android:textColor="@color/red_400"
                         app:layout_constraintEnd_toEndOf="@id/gl_end"
@@ -207,7 +214,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="4.8"
+                        android:text="@{viewModel.productDetail.score}"
                         android:textAppearance="@style/TextAppearance.Body5.Pretendard12_Medium"
                         android:textColor="@color/gray_500"
                         app:layout_constraintBottom_toBottomOf="@id/iv_star_rating"
@@ -219,7 +226,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@{@string/detail_review_count_format(`22,159`)}"
+                        android:text="@{@string/detail_review_count_format(viewModel.productDetail.reviewCount)}"
                         android:textAppearance="@style/TextAppearance.Caption2.Pretendard10_Medium"
                         android:textColor="@color/gray_150"
                         app:layout_constraintStart_toStartOf="@id/gl_start"
@@ -313,11 +320,12 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacingBase"
-                        android:src="@drawable/img_skincare"
+                        android:adjustViewBounds="true"
+                        app:imageUrl="@{viewModel.productDetail.detailImg}"
                         app:layout_constraintEnd_toEndOf="@id/gl_end"
                         app:layout_constraintStart_toStartOf="@id/gl_start"
                         app:layout_constraintTop_toBottomOf="@id/view_divider_tab"
-                        tools:src="@drawable/img_skincare" />
+                        tools:src="@drawable/img_product_detail_sample" />
 
                     <View
                         android:id="@+id/view_divider_product_image"

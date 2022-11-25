@@ -1,29 +1,46 @@
 package com.sopt.oliveyoung.presentation
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.sopt.oliveyoung.R
 import com.sopt.oliveyoung.databinding.ActivityDetailBinding
-import com.sopt.oliveyoung.domain.CosmeticProductInfo
 import com.sopt.oliveyoung.util.binding.BindingActivity
 
 class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_detail) {
+    private val viewModel: ProductDetailViewModel by viewModels()
+    private val similarProductAdapter = CosmeticProductAdapter(this)
+    private val recommendProductAdapter = CosmeticProductAdapter(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+
+        initLayout()
         addListeners()
+        addObservers()
+    }
+
+    private fun initLayout() {
+        binding.viewHashtag.setHashtag(listOf("립밤", "핸드크림", "틴트", "쿠션", "마스크팩"))
+        binding.rvSimilarProductList.adapter = similarProductAdapter
+        binding.rvRecommendProductList.adapter = recommendProductAdapter
     }
 
     private fun addListeners() {
         binding.btnBack.setOnClickListener {
             finish()
         }
-        binding.viewHashtag.setHashtag(listOf("립밤", "핸드크림", "틴트", "쿠션", "마스크팩"))
-        // TODO 어뎁터 생성자에서 context 프로퍼티 제거 및 CosmeticProductInfo 프로퍼티의 데이터 타입을 전부 String으로 수정
-        binding.rvSimilarProductList.adapter = CosmeticProductAdapter(this).apply {
-            setCosmeticList(listOf(CosmeticProductInfo("", "피지오겔", "[한정기획] AI크림 100ml 기획", "27,000", "23%"), CosmeticProductInfo("", "피지오겔", "[한정기획] AI크림 100ml 기획", "27,000", "23%"), CosmeticProductInfo("", "피지오겔", "[한정기획] AI크림 100ml 기획", "27,000", "23%")))
+    }
+
+    private fun addObservers() {
+        viewModel.similarProduct.observe(this) { similars ->
+            similarProductAdapter.setCosmeticList(similars ?: return@observe)
         }
-        binding.rvRecommendProductList.adapter = CosmeticProductAdapter(this).apply {
-            setCosmeticList(listOf(CosmeticProductInfo("", "피지오겔", "[한정기획] AI크림 100ml 기획", "27,000", "23%"), CosmeticProductInfo("", "피지오겔", "[한정기획] AI크림 100ml 기획", "27,000", "23%"), CosmeticProductInfo("", "피지오겔", "[한정기획] AI크림 100ml 기획", "27,000", "23%")))
+
+        viewModel.recommendProduct.observe(this) { recommends ->
+            recommendProductAdapter.setCosmeticList(recommends ?: return@observe)
         }
     }
 }
