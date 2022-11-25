@@ -4,14 +4,14 @@ import com.sopt.oliveyoung.domain.CosmeticProductInfo
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ResponseRecommendProductDto(
+data class ResponseProductDto(
     val brandName: String,
     val mainImg: String,
     val name: String,
     val saledPrice: String,
     val salePercent: String,
 ) {
-    fun toCosmeticProductInfo(product: ResponseRecommendProductDto) =
+    fun toCosmeticProductInfo(product: ResponseProductDto) =
         CosmeticProductInfo(
             product.mainImg,
             product.brandName,

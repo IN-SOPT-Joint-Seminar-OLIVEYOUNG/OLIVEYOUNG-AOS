@@ -24,5 +24,8 @@ interface OliveYoungService {
     fun updateProductLikeState(@Path("id") itemId: Int): Call<ResponseBase<ResponseProductLikeStateDto>>
 
     @GET("/main/pick")
-    fun getMainRecommendProductList(): Call<ResponseBase<List<ResponseRecommendProductDto>>>
+    fun getRecommendProductList(): Call<ResponseBase<List<ResponseRecommendProductDto>>>
+
+    @GET("/main/brand")
+    fun getBrandList(): Call<ResponseBase<List<ResponseBrandDto>>>
 }
