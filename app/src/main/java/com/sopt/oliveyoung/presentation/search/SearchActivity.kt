@@ -10,8 +10,8 @@ import com.sopt.oliveyoung.util.binding.BindingActivity
 import timber.log.Timber
 
 class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_search) {
-    private val RecentSearchAdapter = RecentSearchAdapter(this)
-    private val RecentProductAdapter = CosmeticProductAdapter(this)
+    private val recentSearchAdapter = RecentSearchAdapter(this)
+    private val recentProductAdapter = CosmeticProductAdapter(this)
     private val viewModel: SearchViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,16 +32,16 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
     private fun addObservers() {
         viewModel.searchData.observe(this) { recentSearch ->
             if (recentSearch != null)
-                RecentSearchAdapter.setRecentSearchList(recentSearch!!.recentWords)
+                recentSearchAdapter.setRecentSearchList(recentSearch!!.recentWords)
         }
         viewModel.searchProductData.observe(this) { product ->
             if (product != null)
-                RecentProductAdapter.setCosmeticList(product)
+                recentProductAdapter.setCosmeticList(product)
         }
     }
 
     private fun initLayout() {
-        binding.rvRecentSearch.adapter = RecentSearchAdapter
-        binding.rvRecentProduct.adapter = RecentProductAdapter
+        binding.rvRecentSearch.adapter = recentSearchAdapter
+        binding.rvRecentProduct.adapter = recentProductAdapter
     }
 }
